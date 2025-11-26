@@ -1,6 +1,12 @@
+<div align="center">
+
+<img src="https://i.imgur.com/YoM6hsW.png" alt="Deluge-Headless" width="150"/>
+
 # Deluge Headless
 
-> **One-line install for Deluge daemon + WebUI on headless Debian servers, pre-configured for Servarr stack compatibility.**
+***One-line install for Deluge daemon + WebUI on headless Debian servers, pre-configured for Servarr stack compatibility.***
+
+</div>
 
 ## Why This Script?
 
