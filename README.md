@@ -1,23 +1,35 @@
-# Deluge-Installer
+# Deluge Headless
 
-Deluge install script for headless debian based linux servers.
-Installs deluge daemon and deluge web interface.
+> **One-line install for Deluge daemon + WebUI on headless Debian servers, pre-configured for Servarr stack compatibility.**
 
-**Needs to be run as root**
+## Why This Script?
 
-## Install
+No more fighting with permissions. This script handles all the tedious setup:
+- **Servarr-ready**: Creates `media` group with proper permissions (774, umask 0002)
+- **Pre-configured**: Download location set to `/mnt/deluge` out of the box
+- **Service optimized**: Daemon and WebUI services configured with correct group permissions
+- **Smart**: Auto-detects UFW and opens port 8112 if needed
 
-```wget -q https://rigslab.com/Rambo/Deluge-Installer/raw/branch/main/install.sh -O install.sh && chmod +x install.sh && ./install.sh```
+## Quick Install
 
+**Run as root:**
 
-*The script accepts an optional user argument. It adds your user to the deluge group so you can manage the downloads.*
+```bash
+wget -q https://rigslab.com/Rambo/deluge-headless/raw/branch/main/install.sh -O install.sh && chmod +x install.sh && ./install.sh
+```
 
-## Post Installation
+**Optional:** Pass your username to get added to the deluge group:
 
-Access your web ui http://server_ip:8112
+```bash
+./install.sh yourusername
+```
 
-Default password for the web ui is ``deluge``
+## Post-Install
 
-The default downloads folder is ``/mnt/deluge``
+| What | Where |
+|------|-------|
+| **WebUI** | `http://server_ip:8112` |
+| **Default Password** | `deluge` |
+| **Downloads** | `/mnt/deluge` |
 
-The group ``media`` has been given access to the downloads folder to enable sharing with Servarr apps.
+Your downloads are accessible to both Deluge and your Servarr apps via the `media` group.

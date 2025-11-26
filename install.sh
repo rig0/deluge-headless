@@ -1,5 +1,5 @@
 #!/bin/bash
-# RAMBO TORRENT BOX SETUP SCRIPT. [DEBIAN 9+]
+# Deluge headless install script by Rig0
 # Installs Deluge Daemon and Web-UI, Adjusts permissions to play nice with Servarr stack, Edits services to comply with permissions & pre configures download location.
 
 usr=$1 # username to add to deluge group (optional argument)
